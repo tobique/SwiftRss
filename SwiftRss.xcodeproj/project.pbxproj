@@ -10,8 +10,6 @@
 		D95E1BE71D88D63400F94976 /* SwiftRss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95E1BDD1D88D63300F94976 /* SwiftRss.framework */; };
 		D95E1BEC1D88D63400F94976 /* SwiftRssTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E1BEB1D88D63400F94976 /* SwiftRssTests.swift */; };
 		D95E1BEE1D88D63400F94976 /* SwiftRss.h in Headers */ = {isa = PBXBuildFile; fileRef = D95E1BE01D88D63300F94976 /* SwiftRss.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D95E1BF91D88E01300F94976 /* wk.png in Resources */ = {isa = PBXBuildFile; fileRef = D95E1BF81D88E01300F94976 /* wk.png */; };
-		D95E1BFB1D88E2D500F94976 /* SwiftRss.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E1BFA1D88E2D500F94976 /* SwiftRss.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +29,6 @@
 		D95E1BE61D88D63400F94976 /* SwiftRssTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRssTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95E1BEB1D88D63400F94976 /* SwiftRssTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRssTests.swift; sourceTree = "<group>"; };
 		D95E1BED1D88D63400F94976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D95E1BF81D88E01300F94976 /* wk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wk.png; path = Resources/wk.png; sourceTree = SOURCE_ROOT; };
-		D95E1BFA1D88E2D500F94976 /* SwiftRss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRss.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +72,6 @@
 		D95E1BDF1D88D63300F94976 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				D95E1BFA1D88E2D500F94976 /* SwiftRss.swift */,
 				D95E1BE01D88D63300F94976 /* SwiftRss.h */,
 				D95E1BE11D88D63300F94976 /* Info.plist */,
 			);
@@ -95,7 +90,6 @@
 		D95E1BF71D88DFFD00F94976 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D95E1BF81D88E01300F94976 /* wk.png */,
 			);
 			name = Resources;
 			path = Tests;
@@ -159,7 +153,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = "tobique";
+				ORGANIZATIONNAME = tobique;
 				TargetAttributes = {
 					D95E1BDC1D88D63300F94976 = {
 						CreatedOnToolsVersion = 8.0;
@@ -195,7 +189,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D95E1BF91D88E01300F94976 /* wk.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D95E1BFB1D88E2D500F94976 /* SwiftRss.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +371,6 @@
 		D95E1BF51D88D63400F94976 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.tobsh.SwiftRssTests;
@@ -391,7 +382,6 @@
 		D95E1BF61D88D63400F94976 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.tobsh.SwiftRssTests;
