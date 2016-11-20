@@ -1,0 +1,63 @@
+default_platform :ios
+
+platform :ios do
+  ENV["SLACK_URL"] = "https://hooks.slack.com/services/..." # Webhook URL created in Slack
+
+  projectScheme = "SwiftRss"
+
+  before_all do
+  end
+
+  desc "Run Test Suite"
+  lane :test do |options|
+    scan(
+        clean: true,
+        scheme: "#{projectScheme}",
+        sdk: "iphonesimulator10.0",
+        device: "iPhone 6s"
+    )
+  end
+
+  after_all do |lane|
+    post_to_slack()
+  end
+
+  error do |lane, exception|
+    post_to_slack(exception: exception)
+  end
+
+  private_lane :post_to_slack do |options|
+    if ENV["SLACK_URL"]
+      exception = options[:exception]
+      commit = last_git_commit
+      gitRepoName = `git remote show origin -n | grep h.URL | sed 's/.*://;s/.git$//'`.strip
+      buildVersion = `git describe --tags --always --dirty`
+      slackMessageLink = "https://github.com/#{gitRepoName}/commit/#{commit[:commit_hash]}"
+
+      if !exception
+        slackMessage = "#{gitRepoName} finished on #{:git_branch} (#{buildVersion})  🎉"
+        slack(
+        message: "",
+        success: true,
+        default_payloads: [:test_result, :git_branch, :git_author, :last_git_commit_message,  :get_build_number_repository],
+        attachment_properties: {
+            title: slackMessage,
+            title_link: slackMessageLink
+          }
+        )
+      else
+        slackMessage = "💥: #{gitRepoName} (#{buildVersion})"
+        slack(
+          message: exception.message,
+          success: false,
+          attachment_properties: {
+              title: slackMessage,
+              title_link: slackMessageLink
+            }
+        )
+      end
+
+    end
+  end
+
+end
